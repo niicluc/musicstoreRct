@@ -61,3 +61,8 @@ flex-wrap: wrap;
 .card img:hover{
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%); }
+
+    .margenBtn{
+        margin-top:10px;
+        margin-bottom: 10px;
+    }

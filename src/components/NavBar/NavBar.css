@@ -10,3 +10,14 @@
 .Nav-Bar a:visited{
     color:#00cbf3;
 }
+.categoriasBoton{
+    background-color: black;
+    color:#00cbf3;
+}
+
+.categoriasBoton a{
+    color:#00cbf3;
+}
+.categoriasBoton a:visited{
+    color:#00cbf3;
+}

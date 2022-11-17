@@ -1,5 +1,7 @@
-.Centrar-Carro{
+.carritoStyle{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000000;
 }
+

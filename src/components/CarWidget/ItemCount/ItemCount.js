@@ -2,29 +2,30 @@ import "./ItemCount.css" ;
 import { useState } from 'react'
 import { IoIosAddCircle, IoIosRemoveCircle } from "react-icons/io";
 
-export default function ItemCount({ stock, initial }) {
+export default function ItemCount({ stock, initial, onAdd}) {
     const [value, setValue] = useState(initial);
 
-    function onAdd() {
-        (stock) > value ? setValue(value + 1) : setValue(value + 0);
-    }
-
-    function onSubstract() {
-        value !== 0 ? setValue(value - 1) : setValue(value + 0);
-    }
+    const handleIncrement = () => {
+        value >= stock || setValue(value + 1);
+      };
+    
+      const handleDecremet = () => {
+        value <= 1 || setValue(value - 1);
+      };
     
     return (
         <div className="EstructuraGral">
         <div className="row">
             <div className="col-sm">
-                <button className="ButtonDetalle" onClick={onAdd}><IoIosAddCircle/></button>
+            <button className="ButtonDetalle" onClick={handleDecremet}> <IoIosRemoveCircle/> </button>
                 </div>
                 <div className="col-sm">
                 <p className="h5">{value}</p>
                 </div>
                 <div className="col-sm">
-                <button className="ButtonDetalle" onClick={onSubstract}> <IoIosRemoveCircle/> </button>
+                <button className="ButtonDetalle" onClick={handleIncrement}><IoIosAddCircle/></button>
                 </div>
+                <button type="button" class="margenBtn btn btn-outline-dark" onClick={()=> console.log(onAdd(value))}>Agregar al carrito</button>
             </div>
             </div>
     );
